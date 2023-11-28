@@ -1,0 +1,36 @@
+
+.card {
+    padding: 16px 8px;
+    background-color: #26225f;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 5px;
+    width: 100%;
+    .title {
+        font-family: poppins;
+        font-weight: 600;
+        font-size: 18px;
+        color: white;
+    }
+    .value {
+        font-family: poppins;
+        font-weight: 500;
+        color: rgb(204, 204, 204);
+    }
+    .description {
+        font-family: poppins;
+        font-weight: 400;
+        color: rgb(204, 204, 204);
+        font-size: 12px;
+        font-weight: 300;
+           .green {
+            color: rgb(14, 201, 14);
+            padding: 0 5px;
+        }
+        .red {
+            color: rgb(218, 23, 23);
+            padding: 0 5px;
+        } 
+    }
+}

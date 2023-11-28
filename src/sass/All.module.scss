@@ -1,0 +1,26 @@
+html {
+    font-size: 100%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  div {
+    border: 1px solid;
+    font-size: 120%;
+  }
+  p {
+    font-size: 1rem;
+  }
+  button {
+    font-size: .69rem;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    html {
+      font-size: 120%;
+    }
+  }
