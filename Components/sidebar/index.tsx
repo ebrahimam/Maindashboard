@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from "react";
 import style from "./sidebar.module.scss";
 import {
@@ -12,61 +13,75 @@ import {
   MdHelp,
 } from "react-icons/md";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import { useState } from "react";
 export default function Sidebar() {
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+  const handleChangeLanguage = () => {
+    const newLanguage = currentLanguage === "en" ? "fr" : "en";
+    setCurrentLanguage(newLanguage);
+    changeLanguage(newLanguage);
+  };
   interface Item {
     title: string;
     icon: React.ReactNode;
-    path:string
+    path: string;
   }
   const lists: Item[] = [
     {
-      title: "dashboard",
-      icon: <MdDashboard  size={22}/>,
-      path:"/"
+      title: `${t("Dashboard")}`,
+      icon: <MdDashboard size={22} />,
+      path: "/",
     },
     {
-      title: "User",
+      title: `${t("user")}`,
       icon: <MdPerson size={22} />,
-      path:"/users"
+      path: "/user",
     },
     {
-      title: "Products",
+      title: `${t("products")}`,
       icon: <MdOutlineProductionQuantityLimits size={22} />,
-      path:"/products"
+      path: "/products",
     },
     {
-      title: "Transactions",
+      title: `${t("transactions")}`,
       icon: <MdOutlineMoney size={22} />,
-      path:"/transactions"
+      path: "/transactions",
     },
     {
-      title: "Revenue",
-      icon: <MdDataThresholding size={22}/>,
-      path:"/revenue"
+      title: `${t("revenue")}`,
+      icon: <MdDataThresholding size={22} />,
+      path: "/revenue",
     },
     {
-      title: "Reports",
-      icon: <MdOutlineReport size={22}/>,
-      path:"/reports"
+      title: `${t("reports")}`,
+      icon: <MdOutlineReport size={22} />,
+      path: "/reports",
     },
     {
-      title: "Teams",
-      icon: <MdOutlineDiversity3 size={22}/>,
-      path:"/teams"
+      title: `${t("teams")}`,
+      icon: <MdOutlineDiversity3 size={22} />,
+      path: "/teams",
     },
     {
       title: "Setting",
-      icon: <MdOutlineBuild size={22}/>,
-      path:"/setting"
+      icon: <MdOutlineBuild size={22} />,
+      path: "/setting",
     },
     {
       title: "Help",
       icon: <MdHelp size={22} />,
-      path:"/help"
-    }
+      path: "/help",
+    },
   ];
-  const path:string =usePathname();
-  const currentPath =path.toString();
+  const path: string = usePathname();
+  const currentPath = path.split("/").pop().toString();
+  console.log(currentPath);
+
   return (
     <>
       <div className={style.lists}>
@@ -74,8 +89,11 @@ export default function Sidebar() {
           {lists.map((item) => {
             return (
               <>
-                <li key={item.path} >
-                  <a href={`/dashboard${item.path}`} className={currentPath === item.path && style.active}>
+                <li key={item.path}>
+                  <a
+                    href={`/dashboard/${item.path}`}
+                    className={currentPath === item.path ? style.active : null}
+                  >
                     {item.icon}
                     {item.title}
                   </a>
@@ -84,6 +102,11 @@ export default function Sidebar() {
             );
           })}
         </ul>
+        {t("dashboard")}
+        <button type="button" onClick={handleChangeLanguage}>
+          Change Language
+        </button>
+        <h1>{t('Dashboard')}</h1>
       </div>
     </>
   );

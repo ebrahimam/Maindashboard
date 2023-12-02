@@ -81,5 +81,27 @@
 
     .infocards {
         flex: 1;
+        padding: 12px 8px;
+        gap: 16px;
+        .now {
+            background-color: #182237 !important;
+            color: white;
+            font-family: poppins;
+            font-size: 12px;
+            padding: 8px;
+            .title {
+                font-size: 16px;
+                font-weight: 500;
+            }
+            button {
+                background-color: #3226d88a;
+                color:white;
+                font-family: poppins;
+                border: none;
+                padding: 6px 10px;
+                border-radius: 5px;
+                align-self: center;
+                        }
+        }
     }
 }

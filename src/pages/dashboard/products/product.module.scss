@@ -1,0 +1,89 @@
+.pcontainer {
+    background-color: #26225f;
+    padding: 12px 12px;
+    border-radius: 5px;
+
+    button {
+        outline: none;
+        border: none;
+    }
+    .tcontainer {
+        .table {
+        width: 100%;
+        margin-top: 18px;
+        color: white;
+        font-family: poppins;
+        border-collapse: collapse;
+        font-size: 14px;
+        thead {
+            font-weight: 600;
+            border-bottom: 2px solid teal;
+        }
+        td {
+            padding: 12px;
+        }
+        tr {
+            transition: 0.6s all ease;
+            border-radius: 25px;
+            &:hover {
+                background-color: beige;
+                color: #26225f;
+            }
+            
+        }
+        .button {
+            display: flex;
+            gap: 16px;
+        }
+        .view {
+            background-color: teal;
+            color: white;
+            font-family: poppins;
+            font-weight: 600;
+            padding: 4px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.6s all ease;
+            &:hover {
+                color: #26225f;
+                background-color: transparent;
+            }
+        }
+        .delete {
+            background-color: crimson;
+            color: white;
+            font-family: poppins;
+            font-weight: 600;
+            padding: 4px 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.6s all ease;
+            &:hover {
+                color: #26225f;
+                background-color: transparent;
+            }
+        }
+    }
+    }
+   
+    .pagination {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 12px;
+        button {
+            background-color: #26225f;
+            border: 1px solid rgba(255, 255, 255, 0.596);
+            color: white;
+            font-family: poppins;
+            border-radius: 5px;
+            padding: 8px 12px;
+            &.disa
+            &:hover {
+                background-color: white;
+                color: #26225f;
+            }
+        }
+    }
+}

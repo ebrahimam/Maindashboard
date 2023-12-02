@@ -12,7 +12,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-
+import {BiPlayCircle } from "react-icons/bi"
 export default function Dashboard() {
   interface cardinfo {
     title: string;
@@ -224,7 +224,25 @@ export default function Dashboard() {
 
           </div>
         </div>
-        <div className={style.infocards}></div>
+        <div className={style.infocards}>
+          <div className={style.now}>
+            <div className={style.title}>Avalible Now</div>
+            <div className={style.des}>
+              How to use the new version of admin 
+              Lorem ipsum dolor sit, amet consectetur 
+              adipisicing elit. Facere esse eius ipsa 
+              laudantium eum, enim distinctio 
+              voluptatibus ullam! Nam, voluptate? 
+              Vel veritatis, temporibus eaque quis 
+              nesciunt nam
+               velit dicta consequuntur.
+              adhere dashboard
+            </div>
+            <button>
+            <BiPlayCircle/> Watch
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );
